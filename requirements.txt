@@ -1,0 +1,9 @@
+backports.functools-lru-cache==1.6.1  # via soupsieve
+beautifulsoup4==4.9.3     # via -r requirements.in
+certifi==2020.11.8        # via requests
+chardet==3.0.4            # via requests
+idna==2.10                # via requests
+requests==2.25.0          # via -r requirements.in
+selenium==3.141.0         # via -r requirements.in
+soupsieve==1.9.6          # via beautifulsoup4
+urllib3==1.26.2           # via requests, selenium
