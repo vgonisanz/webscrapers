@@ -1,4 +1,3 @@
 .tox/
-geckodriver.log
-*.egg-info/
-
+*.log
+*.egg-info
