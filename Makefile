@@ -1,5 +1,5 @@
 help:
-	@python3.6 -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
+	@python3.7 -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 env-create: ## (re)create a development environment using tox
 	tox -e webscrapping --recreate

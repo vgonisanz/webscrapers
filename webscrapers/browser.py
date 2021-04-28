@@ -7,6 +7,11 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 from bs4 import BeautifulSoup as bs4
 
+class HttpGetResponse:
+    def __init__(self, soup, url):
+        self.soup = soup
+        self.url = url
+
 class Browser:
     TIMEOUT = 10
 
@@ -31,19 +36,10 @@ class Browser:
         self._browser.implicitly_wait(Browser.TIMEOUT)
     
     def parse_web(self, url):
-        self._browser.get(url)
-        soup = bs4(self._browser.page_source, 'html.parser')
-        return soup
-
-    def check_if_button_is_disabled(self, soup):
-        pattern = re.compile("disabled")
-        button_content = soup.find(attrs={'class':"js-article-add-to-cart"})
-        result = pattern.search(str(button_content))
-        return bool(result)
-
-
-    def check_current_price(self, soup):
-        price_class = soup.find("div", attrs={'id':"precio-main"})
-        return price_class['data-price']
-    
+        try:
+            self._browser.get(url)
+        except:
+            return None
+        response = HttpGetResponse(bs4(self._browser.page_source, 'html.parser'), url)
+        return response 
    
