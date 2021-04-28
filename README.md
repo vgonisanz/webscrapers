@@ -51,3 +51,4 @@ To choose between chrome and firefox use the core flag `use_firefox`
 source ./.tox/webscrapping/bin/activate
 python bin/amd5900x.py
 ```
+Check this repository https://github.com/EricJMarti/inventory-hunter to learn more about webscrapping and coprocessing requests
